@@ -171,7 +171,7 @@ class SNSolver:
             SN_im = -self.hbar*psi_re_t + (self.hbar**2/(2*self.m))*psi_im_xx - self.m*phi_re*psi_im - V*psi_im
 
             PD = psi_re**2 + psi_im**2
-            PEq = phi_xx - 4*np.pi*self.G*self.m*PD if self.enable_SN else phi_xx*0
+            PEq = phi_xx + 4*np.pi*self.G*self.m*PD if self.enable_SN else phi_xx*0
 
             # Initial Condition at t = 0
             xt0 = xt[xt[:,1] < 1e-6]  # slice at t ≈ 0
